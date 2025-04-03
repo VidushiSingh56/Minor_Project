@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:5000/signup', { username, password });
+      const response = await axios.post('https://hashing-2883.onrender.com/signup', { username, password });
       // Save a dummy token and username in localStorage
       localStorage.setItem('authToken', 'dummy_token');
       localStorage.setItem('username', username);
