@@ -13,11 +13,12 @@ Users can **sign up, log in, and log out**, with access control enforced on prot
 ✅ **Protected Routes** (Home page accessible only after login)  
 ✅ **Logout Functionality** (Clears authentication session)  
 ✅ **User Feedback** (Displays success/error messages on UI)  
+✅ **JWT Authentication**: After successful login, users receive a JWT token, which is required to access protected routes.
 
----
 
 ## 🔑 **How SHA-256 Hashing Works in This Project**
 SHA-256 (Secure Hash Algorithm 256-bit) is a **one-way cryptographic hashing function** that converts a password into a unique **64-character hexadecimal hash**. Instead of storing plaintext passwords, we store these irreversible hashes in the database.  
+![Screenshot 2025-04-04 005355](https://github.com/user-attachments/assets/20ce7eff-2c42-4ff9-92f5-2f4c83c90775)
 
 ### **Hashing Process in Our Project**
 1. The user enters a password during **signup**.
@@ -93,7 +94,8 @@ npm start
 3. If successful, you will be redirected to the **Home page**.
 4. Click **Logout** to end the session.
 5. Trying to access the Home page after logout will redirect to **Login**.
-
+## **JWT Usage**
+- Upon successful login, the server generates a JWT token, which is stored in the frontend (e.g., in localStorage or cookies). This token is required for accessing protected routes, ensuring secure user sessions.
 ---
 
 ## 🎯 **Future Improvements**
