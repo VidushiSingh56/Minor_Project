@@ -120,6 +120,3 @@ This project is licensed under the MIT License.
 
 ## 🌟 **Show Your Support**
 If you found this project helpful, ⭐ **star** this repository on GitHub! 🚀  
-```
-
-This **includes everything**—installation, usage, improvements, and more. Just **paste** this into your `README.md` file, and you're all set! 🚀🔥 Let me know if you need any more tweaks. 😃
