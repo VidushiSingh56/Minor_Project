@@ -113,10 +113,10 @@ This project is licensed under the MIT License.
 ## 💡 **Contributors**
 👨‍💻 **Team Members:**  
 - **Shiva**  
-- **Vidushi**  
-- **Jayesh**  
-- **Risha**
-- **Gaurav**  
+- **Vidushi Singh**  
+- **Jayesh Kaushik**  
+- **Risha Sri**
+- **Gaurav Mamgain**  
 
 ---
 
