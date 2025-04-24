@@ -9,7 +9,7 @@ Users can **sign up, log in, and log out**, with access control enforced on prot
 
 ## ⚙️ Features  
 ✅ **User Authentication** (Signup & Login)  
-✅ **SHA-256 Password Hashing** for security  
+✅ **Custom SHA-256 Password Hashing** for security  
 ✅ **Protected Routes** (Home page accessible only after login)  
 ✅ **Logout Functionality** (Clears authentication session)  
 ✅ **User Feedback** (Displays success/error messages on UI)  
