@@ -18,7 +18,8 @@ Users can **sign up, log in, and log out**, with access control enforced on prot
 
 ## 🔑 **How SHA-256 Hashing Works in This Project**
 SHA-256 (Secure Hash Algorithm 256-bit) is a **one-way cryptographic hashing function** that converts a password into a unique **64-character hexadecimal hash**. Instead of storing plaintext passwords, we store these irreversible hashes in the database.  
-![Screenshot 2025-04-04 005355](https://github.com/user-attachments/assets/20ce7eff-2c42-4ff9-92f5-2f4c83c90775)
+![image](https://github.com/user-attachments/assets/90dbc36d-b541-4592-8c60-809f48c8a03b)
+
 
 ### **Hashing Process in Our Project**
 1. The user enters a password during **signup**.
