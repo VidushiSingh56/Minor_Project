@@ -1,18 +1,19 @@
-// src/Home.js
-import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-//   const location = useLocation();
-//   const queryParams = new URLSearchParams(location.search);
-  const message = 'Welcome to the Home Page!';
+  const [username, setUsername] = useState('');
 
-  // Check if user is authenticated
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
+    const storedUsername = localStorage.getItem('username');
+
     if (!authToken) {
       navigate('/login');
+    } else {
+      setUsername(storedUsername || 'User');
     }
   }, [navigate]);
 
@@ -24,8 +25,13 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Home</h1>
-      <p>{message}</p>
+      <h1 className="home-title">Hello, {username}! 🎉</h1>
+      <p className="home-message">Welcome to the Home Page!</p>
+      <img
+        src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif"
+        alt="Celebration"
+        className="home-image"
+      />
       <button onClick={handleLogout} className="btn-submit">Logout</button>
     </div>
   );
