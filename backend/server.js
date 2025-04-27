@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const crypto = require("crypto");
+// const sha256 = require('./sha256');
 const jwt = require("jsonwebtoken");
 
 const app = express();
@@ -28,19 +28,36 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 // Helper function to hash a password using SHA-256
-const hashPassword = (password) => {
-  return crypto.createHash("sha256").update(password).digest("hex");
+// const hashPassword = (username, password) => {
+//   const salt = username;  // You can use username or generate a random salt
+//   const combined = username + password + salt; // Combine username, password, and salt
+//   const hash = sha256(combined);  // Hash the combined string
+//   return hash;
+// };
+const crypto = require('crypto');
+
+const sha256 = (data) => {
+  return crypto.createHash('sha256').update(data).digest('hex');
 };
+
+const hashPassword = (username, password) => {
+  const combined = username + password;
+  return sha256(combined);
+};
+
+// console.log(hashPassword('a2', 'a1')); // Should produce a valid hash.
 
 // Generate JWT Token
 const generateToken = (username) => {
   return jwt.sign({ username }, JWT_SECRET, { expiresIn: "1h" });
-};
+}
+// console.log(hashPassword('a1','a1'));
 
 // Signup Route
 app.post("/signup", async (req, res) => {
   const { username, password } = req.body;
-  const passwordHash = hashPassword(password);
+  const passwordHash = hashPassword(username, password);
+  console.log(passwordHash)
 
   try {
     const newUser = new User({ username, passwordHash });
@@ -55,7 +72,7 @@ app.post("/signup", async (req, res) => {
 // Login Route
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  const passwordHash = hashPassword(password);
+  const passwordHash = hashPassword(username, password);
 
   try {
     const user = await User.findOne({ username });
