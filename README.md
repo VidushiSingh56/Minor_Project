@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔐 MERN Authentication System with SHA-256 Hashing
 
 ## 📌 Overview
@@ -123,3 +124,6 @@ This project is licensed under the MIT License.
 
 ## 🌟 **Show Your Support**
 If you found this project helpful, ⭐ **star** this repository on GitHub! 🚀  
+=======
+# Minor_Project
+>>>>>>> 77ab298cd9712e2db30fcece2cb1e140023d4bd5
